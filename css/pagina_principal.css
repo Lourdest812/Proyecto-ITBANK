@@ -1,21 +1,8 @@
-*{
-    box-sizing: border-box;
-}
-
-body{
-    margin: 0;
-    font-family: sans-serif;
-    width: 100%;
-    position: relative;
-    /*Para incrementar el tamaño*/
-    min-height: 100vh;
-}
-
 header{
     display: flex;
     justify-content: space-between;
     min-height: 70px;
-    background-color: coral;
+    background-color: var(--color-principal);
     align-items: center;
     padding: 10px;
 }
@@ -51,10 +38,14 @@ header{
     color: black;
 }
 
+.nombre-banco{
+    margin: 5px 0;
+}
+
 footer{
     position: absolute;
     display: flex;
-    background-color: coral;
+    background-color: var(--color-principal);
     width: 100%;
     bottom: 0;
     left: 0;
@@ -70,11 +61,13 @@ footer ul li {
     list-style: none;
 }
 
+header{
+    flex-direction: column;
+    text-align: center;
+    padding-top: 15px;
+}
+
 @media(max-width:700px){
-    header{
-        flex-direction: column;
-        text-align: center;
-    }
     .logo{
         display: block;
     }

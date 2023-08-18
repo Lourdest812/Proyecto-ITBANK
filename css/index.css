@@ -1,0 +1,16 @@
+:root {
+    --color-principal: rgb(241, 117, 45);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    width: 100%;
+    position: relative;
+    /*Para incrementar el tamaño*/
+    min-height: 100vh;
+}

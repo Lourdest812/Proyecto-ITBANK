@@ -3,13 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Links a archivos .css-->
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!--Link a fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Links a Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!--Link a favicon-->
+    <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="./img/favicon.ico">
+
+    
     <title>Inicio de Sesion</title>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <!--Imagen del logo va acá-->
+            <a href="#"><img src="../img/bxs-bank.svg" alt="logo"></a>
+            <a href="#"><h2 class="nombre-banco">ITBANK</h2></a>
+        </div>
+    </header>
+
+
     <main>
-        <form action="#">
-            <a href="html/pagina_principal.html"> Ingresar </a>
-        </form>
+
+        <div class="container">
+            <form action="html/pagina_principal.html">
+                <h1>Inicio de sesión</h1>
+                <div class="login-picture">
+                    <img src="/img/undraw_login_re_4vu2.svg" alt="login-picture">
+                </div>  
+                <div class="form-group">
+                    <label for="user">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="user" id="user" class="form-control" required placeholder="Usuario">
+                    </label>
+                </div>
+                <div class="form-group">
+                <label for="email">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" name="email" id="email" class="form-control" required placeholder="Email">
+                </label>
+                </div>
+                <div class="form-group">
+                <label for="password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" id="password" class="form-control" required placeholder="Contraseña">
+                </label>
+                </div>
+                <div class="button-class">
+                    <input type="submit" id="button" value="Ingresar" />
+                </div>
+            </form>
+        </div>
     </main>
+    <footer>
+        <ul>
+            <li>Derechos reservados @ 2023</li>
+        </ul>
+    </footer>
 </body>
 </html>
+

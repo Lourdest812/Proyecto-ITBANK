@@ -1,0 +1,200 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: whitesmoke;
+    display: block;
+    min-height: 120vh;
+}
+
+main{
+    padding: 50px;
+}
+
+/* --------------- Encabezado --------------- */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    background-color: var(--color-principal);
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: black;
+}
+
+.nombre-banco{
+    margin: 5px 0;
+    font-size: 28px;
+}
+
+/*--------------- Formulario --------------- */
+
+.container{
+    margin:auto;
+    width: 700px;
+    max-width: 100%;
+    /*Hace que cada elemento quede uno al lado del otro*/
+    text-align: center;
+}
+
+.container form{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: whitesmoke;
+    border-radius: 4px;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, .3);*/
+    text-align: center;
+    flex: 1;
+}
+
+.container h1{
+    text-align: center;
+    margin-bottom: 24px;
+    color: #222;
+}
+
+.form-control{
+    width: 70%;
+    height: 30px;
+    padding: 0 20px;
+    border: none;
+	border-bottom: 2px solid silver;
+    background: none;
+    outline: none;
+}
+
+.form-control:active,
+.form-control:focus,
+.form-control:hover {
+	border-bottom-color: rgb(251, 137, 7);
+}
+
+/*--------------- Botón Formulario ---------------*/
+
+.button-class{
+    padding-top: 40px;
+    padding-bottom: 125px;
+    text-align: center;
+}
+
+input#button {
+    background: rgb(251, 137, 7);
+    color: #ffffff;
+    width: 180px;
+    height: 34px;
+    border:none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2.5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+input#button:hover {
+    background-color: #ffffff;
+    color: rgb(251, 137, 7);
+    border:1px solid rgb(251, 137, 7);;
+}
+
+button .buttom:hover {
+    background-color: white;
+}
+
+.form-group{
+    padding: 10px;
+}
+
+.form-group i{
+    padding: 5px;
+}
+
+.login-picture{
+    display: inline-block; 
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    width: 400px;
+    max-height: 250px;
+    padding: 40px;
+    right: 0;
+    left: 0;
+    position:relative;
+    height: 100%;
+}
+
+.login-picture img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* --------------- Pie de página --------------- */
+
+footer{
+    position: absolute;
+    display: flex;
+    background-color: var(--color-principal);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    /*Para incrementar el tamaño*/
+    padding: 3rem 8%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer ul li {
+    text-decoration: none;
+    list-style: none;
+}
+
+/*--------------- Media query ---------------*/
+
+@media(max-width:700px){
+    body{
+        min-height: 80vh;
+    }
+    header{
+        background-color: whitesmoke;
+    }
+    footer{
+        display: none;
+    }
+
+    .container{
+        width: 400px;
+    }
+
+    .login-picture{
+        flex-direction: column;
+        padding-top: 20px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .login-picture img{
+        width: 100%;
+        max-width: 90%;
+    }
+}

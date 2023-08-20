@@ -1,25 +1,16 @@
+
+/* --------------- Encabezado --------------- */
+
 header{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     min-height: 70px;
     background-color: var(--color-principal);
     align-items: center;
     padding: 10px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: black;
-    font-weight: 400;
-    padding-right: 10px;
-}
-
-.menu a:hover{
-    color: white;
-}
-
-.menu ul li{
-    list-style: none;
+    flex-direction: column;
+    text-align: center;
 }
 
 .logo{
@@ -42,6 +33,47 @@ header{
     margin: 5px 0;
 }
 
+
+/* --------------- Menu lateral --------------- */
+
+.sidebar {
+    width: 200px;
+    background-color:#f4f4f4;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #dd5800;
+    font-weight: 600;
+    display: block;
+    padding: 16px;
+}
+
+.sidebar a.active {
+    /* background-color: #fa8f2c; */
+    background-color: #fc843f;
+    color: #f1f1f1;
+}
+
+/* hover */
+.sidebar a:hover:not(.active) {
+    background-color: #ffe2ce;
+    /* color: white; */
+}
+
+
+/* --------------- Area principal --------------- */
+
+.main-section .content {
+
+}
+
+
+/* --------------- Pie de página --------------- */
+
 footer{
     position: absolute;
     display: flex;
@@ -61,17 +93,30 @@ footer ul li {
     list-style: none;
 }
 
-header{
-    flex-direction: column;
-    text-align: center;
-    padding-top: 15px;
-}
+/* -------------------------------------- */
 
+/* pantallas de menos de 700px */
 @media(max-width:700px){
     .logo{
         display: block;
     }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {
+        float: left;
+    }
     footer{
         padding: 1.25rem 2%;
     }
+}
+
+/* pantallas de menos de 400px */
+@media(max-width: 400px){
+.sidebar a {
+    text-align: center;
+    float: none;
+}
 }

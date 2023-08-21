@@ -134,10 +134,15 @@ header{
     color: white;
 }
 
-.button:hover {
+.button a:hover{
+    color: rgb(251, 137, 7);
+    transition: .5s;
+}
+
+.button:hover{
     background-color: #ffffff;
     color: rgb(251, 137, 7);
-    border:1px solid rgb(251, 137, 7);;
+    border:1px solid rgb(251, 137, 7);
 }
 
 .form-group{

@@ -6,11 +6,15 @@
 body{
     background: whitesmoke;
     display: block;
-    min-height: 120vh;
+    min-height: 150vh;
 }
 
 main{
     padding: 50px;
+}
+
+p{
+    font-size: 14px;
 }
 
 /* --------------- Encabezado --------------- */
@@ -93,13 +97,26 @@ header{
 
 /*--------------- Botón Formulario ---------------*/
 
+.olvido{
+    padding-top: 20px;
+}
+
+.olvido a{
+    color: rgba(239, 88, 18, 0.995);
+    font-weight: 600;
+}
+
+.buttons{
+    padding-bottom: 70px;
+}
+
 .button-class{
-    padding-top: 40px;
-    padding-bottom: 125px;
+    padding-top: 10px;
+    padding-bottom: 40px;
     text-align: center;
 }
 
-input#button {
+.button {
     background: rgb(251, 137, 7);
     color: #ffffff;
     width: 180px;
@@ -111,14 +128,16 @@ input#button {
     font-weight: 500;
     font-size: 15px;
 }
-input#button:hover {
+
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
+.button:hover {
     background-color: #ffffff;
     color: rgb(251, 137, 7);
     border:1px solid rgb(251, 137, 7);;
-}
-
-button .buttom:hover {
-    background-color: white;
 }
 
 .form-group{

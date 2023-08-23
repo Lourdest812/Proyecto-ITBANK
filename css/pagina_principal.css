@@ -1,3 +1,5 @@
+/* --------------- Layout de la pagina --------------- */
+
 
 /* --------------- Encabezado --------------- */
 
@@ -40,37 +42,40 @@ header{
     width: 200px;
     background-color:#f4f4f4;
     position: fixed;
+    width: 220px;
     height: 100%;
     overflow: auto;
 }
 
-.sidebar a {
+.sidebar .section-link{
     text-decoration: none;
     color: #dd5800;
     font-weight: 600;
     display: block;
     padding: 16px;
+    cursor: pointer;
 }
 
-.sidebar a.active {
-    /* background-color: #fa8f2c; */
+.sidebar .section-link.active {
     background-color: #fc843f;
     color: #f1f1f1;
 }
 
 /* hover */
-.sidebar a:hover:not(.active) {
+.sidebar .section-link:hover:not(.active) {
     background-color: #ffe2ce;
-    /* color: white; */
 }
-
 
 /* --------------- Area principal --------------- */
 
-.main-section .content {
-
+#main-section{
+    margin-left: 220px; /* Igual al ancho del sidebar */
+    padding: 20px;
 }
 
+#main-section-content {
+
+}
 
 /* --------------- Pie de página --------------- */
 
@@ -108,6 +113,9 @@ footer ul li {
     .sidebar a {
         float: left;
     }
+    #main-section{
+        margin-left: 0; /* Igual al ancho del sidebar */
+    }    
     footer{
         padding: 1.25rem 2%;
     }
@@ -115,8 +123,8 @@ footer ul li {
 
 /* pantallas de menos de 400px */
 @media(max-width: 400px){
-.sidebar a {
-    text-align: center;
-    float: none;
-}
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
 }

@@ -64,6 +64,48 @@ header{
     background-color: #ffe2ce;
 }
 
+/*--------------- Botones ---------------*/
+
+.button-class{
+    padding-top: 10px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.button {
+    background: rgb(251, 137, 7);
+    color: #ffffff;
+    max-width: 100%;
+    height: 70px;
+    border:none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2.5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.button button{
+    max-width: 100%;
+}
+
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
+.button a:hover{
+    color: rgb(251, 137, 7);
+    transition: .5s;
+}
+
+.button:hover{
+    background-color: #ffffff;
+    color: rgb(251, 137, 7);
+    border:1px solid rgb(251, 137, 7);
+}
+
+
 /* --------------- Area principal --------------- */
 
 #main-section{
@@ -239,6 +281,66 @@ header{
 
 .converter-card .result {
     font-weight: bold;
+}
+
+/*--------------- Sección de transferencias--------------- */
+
+.transfers-titulo{
+    text-align: left;
+    padding-top: 40px;
+}
+
+.transfers-options{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.transfers-option{
+    width: 60%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.contacto{
+    display: flex;
+    padding: 20px;
+    width: 200px;
+}
+
+.contactos{
+    align-items: center;
+    margin: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.button-contacto {
+    background: rgb(236, 232, 227);
+    color: #1e1c1c;
+    width: 200px;
+    height: 200px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.see-more{
+    background-color: rgb(91, 89, 89);
+    color: white;
+
+}
+
+.add{
+    border: solid black;
+    font-weight: 500;
 }
 
 /* --------------- Pie de página --------------- */

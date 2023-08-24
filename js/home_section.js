@@ -6,22 +6,24 @@ document.getElementById("home-section-link").addEventListener("click", () => {
 });
 
 function renderHomeSection(){
+    const mainSectionTitle = document.getElementById("main-section-title");
     const mainSectionContent = document.getElementById("main-section-content");
-    const homeSectionLink = document.getElementById("home-section-link");
-    const accountsSectionLink = document.getElementById("accounts-section-link");
-    const transfersSectionLink = document.getElementById("transfers-section-link");
-    const paymentsSectionLink = document.getElementById("payments-section-link");
 
     // Seteo de link activo:
-    homeSectionLink.classList.add("active");
-    accountsSectionLink.classList.remove("active");
-    transfersSectionLink.classList.remove("active");
-    paymentsSectionLink.classList.remove("active");
+    setMenuActiveLink("home-section-link");
 
     // Renderizado del contenido:
-    const username = localStorage.getItem("username");
+    mainSectionTitle.innerText = "INICIO";
 
-    mainSectionContent.innerHTML = `¡Bienvenido, ${capitalizeString(username)}!`
+    const username = localStorage.getItem("username");
+    mainSectionContent.innerHTML = `
+    <p class="home-user-welcome">
+        ¡Te damos la bienvenida ${capitalizeString(username)}!
+    </p>
+    <div class="home-user-welcome-img">
+        <img src="../img/home_welcome.svg" alt="welcome-picture"></img>
+    </div>  
+    `
 }
 
 function capitalizeString(str) {

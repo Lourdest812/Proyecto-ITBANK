@@ -20,3 +20,38 @@ body{
     /*Para incrementar el tamaño*/
     min-height: 100vh;
 }
+
+.button-class{
+    padding-top: 10px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.button {
+    background: rgb(251, 137, 7);
+    color: #ffffff;
+    width: 180px;
+    height: 34px;
+    border:none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2.5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
+.button a:hover{
+    color: rgb(251, 137, 7);
+    transition: .5s;
+}
+
+.button:hover{
+    background-color: #ffffff;
+    color: rgb(251, 137, 7);
+    border:1px solid rgb(251, 137, 7);
+}

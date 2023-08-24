@@ -52,125 +52,6 @@ header{
     font-size: 28px;
 }
 
-/*--------------- Formulario --------------- */
-
-.container{
-    margin:auto;
-    width: 700px;
-    max-width: 100%;
-    /*Hace que cada elemento quede uno al lado del otro*/
-    text-align: center;
-}
-
-.container form{
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    background: whitesmoke;
-    border-radius: 4px;
-    /*box-shadow: 0 8px 16px rgba(0, 0, 0, .3);*/
-    text-align: center;
-    flex: 1;
-}
-
-.container h1{
-    text-align: center;
-    margin-bottom: 24px;
-    color: #222;
-}
-
-.form-control{
-    width: 70%;
-    height: 30px;
-    padding: 0 20px;
-    border: none;
-	border-bottom: 2px solid silver;
-    background: none;
-    outline: none;
-}
-
-.form-control:active,
-.form-control:focus,
-.form-control:hover {
-	border-bottom-color: rgb(251, 137, 7);
-}
-
-/*--------------- Botón Formulario ---------------*/
-
-.olvido{
-    padding-top: 20px;
-}
-
-.olvido a{
-    color: rgba(239, 88, 18, 0.995);
-    font-weight: 600;
-}
-
-.button-class{
-    padding-top: 10px;
-    padding-bottom: 40px;
-    text-align: center;
-}
-
-.button {
-    background: rgb(251, 137, 7);
-    color: #ffffff;
-    width: 180px;
-    height: 34px;
-    border:none;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 2.5px;
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.button a{
-    text-decoration: none;
-    color: white;
-}
-
-.button a:hover{
-    color: rgb(251, 137, 7);
-    transition: .5s;
-}
-
-.button:hover{
-    background-color: #ffffff;
-    color: rgb(251, 137, 7);
-    border:1px solid rgb(251, 137, 7);
-}
-
-.form-group{
-    padding: 10px;
-}
-
-.form-group i{
-    padding: 5px;
-}
-
-.login-picture{
-    display: inline-block; 
-    justify-content: center;
-    text-align: center;
-    max-width: 100%;
-    width: 400px;
-    max-height: 250px;
-    padding: 40px;
-    right: 0;
-    left: 0;
-    position:relative;
-    height: 100%;
-}
-
-.login-picture img{
-    max-width: 100%;
-    max-height: 100%;
-}
-.register{
-    padding-bottom: 70px;
-}
-
 /* --------------- Pie de página --------------- */
 
 footer{
@@ -192,6 +73,151 @@ footer ul li {
     list-style: none;
 }
 
+
+/*--------------- Formulario --------------- */
+
+.container{
+    margin:auto;
+    width: 100%;
+    text-align: center;
+    display: inline;
+    /*Hace que cada elemento quede uno al lado del otro*/
+}
+
+.container form{
+    width: 100%;
+    height: 100%;
+    background: whitesmoke;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, .3);*/
+    text-align: center;
+}
+
+.container h1{
+    text-align: center;
+    margin-bottom: 24px;
+    color: #222;
+}
+
+.form-control{
+    width: 30%;
+    height: 50px;
+    padding: 0 20px;
+    border: none;
+	border-bottom: 2px solid silver;
+    background: none;
+    outline: none;
+}
+
+.form-control:active,
+.form-control:focus,
+.form-control:hover {
+	border-bottom-color: rgb(251, 137, 7);
+}
+
+.form-group{
+    padding: 10px;
+}
+
+.form-group i{
+    padding: 2px;
+}
+
+.login-picture{
+    display: inline-block; 
+    
+    text-align: center;
+    max-width: 100%;
+    width: 400px;
+    max-height: 250px;
+    padding: 40px;
+    right: 0;
+    left: 0;
+    position:relative;
+    height: 100%;
+}
+
+.login-picture img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.register{
+    padding-bottom: 70px;
+}
+
+input::placeholder {
+    font-size: 15px;
+}
+
+.olvido{
+    padding: 20px;
+}
+
+.olvido a{
+    color: rgba(239, 88, 18, 0.995);
+    font-weight: 600;
+}
+
+/*--------------- Botón Formulario ---------------*/
+
+.button-class{
+    padding-top: 10px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.button {
+    background: rgb(251, 137, 7);
+    color: #ffffff;
+    width: 50%;
+    height: 50px;
+    border:none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2.5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.button button{
+    max-width: 100%;
+}
+
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
+.button a:hover{
+    color: rgb(251, 137, 7);
+    transition: .5s;
+}
+
+.button:hover{
+    background-color: #ffffff;
+    color: rgb(251, 137, 7);
+    border:1px solid rgb(251, 137, 7);
+}
+
+/*--------------- Validación de Inicio de sesión ---------------*/
+
+#user-error, #email-error, #password-error{
+    color: #C62828;
+    background: rgba(255, 0, 0, 0.1);
+    margin-top: 5px;
+    font-size: 15px;
+    /*width: 50%;*/
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #EF9A9A;
+    padding: 5px 8px;
+    display: none;
+}
+
+.error{
+    margin: 0 auto;
+    width: 30%;
+}
+
 /*--------------- Media query ---------------*/
 
 @media(max-width:700px){
@@ -206,11 +232,10 @@ footer ul li {
     }
 
     .container{
-        width: 400px;
+        max-width: 100%;
     }
 
     .login-picture{
-        flex-direction: column;
         padding-top: 20px;
         max-width: 100%;
         text-align: center;
@@ -219,5 +244,20 @@ footer ul li {
     .login-picture img{
         width: 100%;
         max-width: 90%;
+    }
+
+    .form-control{
+        margin: 0;
+        width: 87%;
+        height: 50px;
+    }
+
+    .button{
+        width: 90%;
+    }
+
+    .error{
+        margin: 0 auto;
+        width: 70%;
     }
 }

@@ -8,7 +8,6 @@ document.getElementById("payments-section-link").addEventListener("click", () =>
         const paymentResultMessage = document.getElementById("payment-result");
 
         if (paymentCode.value !== "" && paymentAmount.value !== ""){
-            console.log(paymentAmount.value);
             paymentResultMessage.textContent = `¡Pago exitoso!`;
         }
         else{

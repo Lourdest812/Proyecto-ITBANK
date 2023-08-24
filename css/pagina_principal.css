@@ -138,6 +138,70 @@ header{
     margin-top: 10px;
 }
 
+/* Sección de pagos de cuentas y servicios */
+.payments-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.payments-card {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.payments-card input {
+    width: 90%;
+    padding: 5px;
+}
+
+#payment-result {
+    padding: 15px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Sección de prestamos */
+.loan-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.loan-card {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.loan-card input {
+    width: 90%;
+    padding: 5px;
+}
+
+.loan-card .cotization{
+    padding: 5px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.loan-card .result {
+    font-weight: bold;
+}
+
 /* Sección de compra/venta de dolares */
 .converter-container {
     display: flex;
@@ -145,12 +209,12 @@ header{
 }
 
 .converter-card {
-    width: 60%;
+    width: 90%;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .form-group {
@@ -167,9 +231,16 @@ header{
     padding: 5px;
 }
 
+.converter-card .cotization{
+    padding: 5px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
 .converter-card .result {
     font-weight: bold;
 }
+
 /* --------------- Pie de página --------------- */
 
 footer{

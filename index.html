@@ -37,7 +37,7 @@
     <main>
 
         <div class="container">
-            <form id="login-form" action="html/pagina_principal.html">
+            <form id="login-form" action="html/pagina_principal.html" name="login-form" method="GET" novalidate>
                 <h1>Inicio de sesión</h1>
                 <div class="login-picture">
                     <img src="img/undraw_login_re_4vu2.svg" alt="login-picture">
@@ -45,24 +45,28 @@
                 <div class="form-group">
                     <label for="user">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" name="user" id="user" class="form-control" required placeholder="Usuario">
+                        <input type="text" name="user" id="user" class="form-control" placeholder="Usuario">
+                        <div id="user-error" class="error">Ingrese un usuario válido</div>
                     </label>
                 </div>
                 <div class="form-group">
                 <label for="email">
                     <i class="fa fa-envelope"></i>
-                    <input type="email" name="email" id="email" class="form-control" required placeholder="Email">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                    <div id="email-error" class="error">Ingrese un mail válido</div>
                 </label>
                 </div>
                 <div class="form-group">
                 <label for="password">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" id="password" class="form-control" required placeholder="Contraseña">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
+                    <div id="password-error" class="error">Ingrese una contraseña válida</div>
                 </label>
+            </div>
                 <div class="olvido">
                     <a href="html/register.html"><p>¿Olvidaste tu contraseña?</p></a>
                 </div>
-                </div>
+                
                 <div class="buttons">
                     <div class="button-class">
                         <button class="button" type="submit">Ingresar</button>
@@ -82,8 +86,8 @@
             <li>Derechos reservados @ 2023</li>
         </ul>
     </footer>
-
     <script src="js/login.js"></script>
+    <script src="js/verificar.js"></script>
 </body>
 </html>
 

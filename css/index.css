@@ -55,3 +55,25 @@ body{
     color: rgb(251, 137, 7);
     border:1px solid rgb(251, 137, 7);
 }
+
+
+.select{
+    background: rgb(251, 137, 7);
+    color: #ffffff;
+    padding: 4px 10px;
+    border:none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2.5px;
+    font-weight: 500;
+    font-size: 15px;
+    width: 180px;
+    height: 34px;
+    text-align: center;
+}
+
+.label{
+    padding: 5px 0;
+    display: block;
+    font-weight: bold;
+}

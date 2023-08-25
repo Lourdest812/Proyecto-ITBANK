@@ -48,6 +48,7 @@ form.addEventListener('submit', (e)=>{
     if (password.value.length < 6) {
         password.style.border = '1px solid red';
         errorPassword.style.display = 'block';
+        errorPassword.textContent = "Su contraseña debe contener al menos 6 caracteres";
         password.focus();
         valid = false;
     } else {

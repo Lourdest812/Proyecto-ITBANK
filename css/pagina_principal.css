@@ -305,18 +305,17 @@ header{
 }
 
 .contacto{
-    display: flex;
-    padding: 20px;
-    width: 200px;
+    padding: 40px;
+    width: 100%;
 }
 
 .contactos{
     align-items: center;
-    margin: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
     justify-items: center;
+    padding: 20px;
 }
 
 .button-contacto {
@@ -343,6 +342,62 @@ header{
     font-weight: 500;
 }
 
+/*Formulario*/
+
+.transfers-form{
+    max-width: 90%;
+    height: 100%;
+    background: whitesmoke;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, .3);*/
+}
+
+
+.cuerpo#blur.active{
+    filter: blur(220px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 2%;
+}
+
+#popup.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.form-control{
+    width: 50%;
+    height: 50px;
+    padding: 0 20px;
+    border: none;
+	border-bottom: 2px solid silver;
+    background: none;
+    outline: none;
+}
+
+.form-group label{
+    font-family: 'Poppins', sans-serif;
+}
+
+.popup-form{
+    padding: 10px;
+}
+
 /* --------------- Pie de página --------------- */
 
 footer{
@@ -365,6 +420,13 @@ footer ul li {
 }
 
 /* -------------------------------------- */
+
+@media(max-width:1100px){
+    #popup{
+        width: 60%;
+    }
+}
+
 
 /* pantallas de menos de 700px */
 @media(max-width:700px){
@@ -389,6 +451,12 @@ footer ul li {
     footer{
         padding: 1.25rem 2%;
     }
+    #popup{
+        width: 90%;
+    }
+    .transfers-titulo{
+        text-align: center;
+    }
 }
 
 /* pantallas de menos de 400px */
@@ -396,5 +464,8 @@ footer ul li {
     .sidebar a {
         text-align: center;
         float: none;
+    }
+    #popup{
+        width: 70%;
     }
 }

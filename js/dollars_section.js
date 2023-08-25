@@ -5,8 +5,7 @@ document.getElementById("dollars-section-link").addEventListener("click", () => 
 
     document.getElementById("calculate").addEventListener("click", function() {
         const amount = parseFloat(document.getElementById("amount").value) || 0;
-        const operation = document.getElementById("operation").value;    
-        const result = calculateDollarEquivalence(amount, operation);
+        const result = calculateDollarEquivalence(amount);
         document.getElementById("result").textContent = `$${result}`;
     });
 });
@@ -51,14 +50,6 @@ function renderDollarsSection(){
 }
 
 
-function calculateDollarEquivalence(amount, operation){
-
-    let result;
-    if (operation === "compra") {
-        result = (amount * dollarCotization).toFixed(2);
-    } else if (operation === "venta") {
-        result = (amount / dollarCotization).toFixed(2);
-    }
-    
-    return result;
+function calculateDollarEquivalence(amount){
+    return (amount * dollarCotization).toFixed(2);
 }

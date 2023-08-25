@@ -51,6 +51,11 @@ function renderLoansSection(){
 
 
 function calculateLoanmonthlyPayment(loanAmount, interestRate, loanTerm){
+
+    if (!(loanAmount && interestRate && loanTerm)){
+        return 0;
+    }
+
     const monthlyInterestRate = interestRate / 12;
     const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, - loanTerm));
 

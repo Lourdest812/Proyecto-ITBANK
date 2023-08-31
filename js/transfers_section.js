@@ -12,14 +12,18 @@ function renderTransfersSection(){
     // Renderizado del contenido:
     mainSectionTitle.innerText = "TRANSFERENCIAS"
     mainSectionContent.innerHTML = `
-    <div class="container">
+    <div class="container" id="blur>
     <form action="#" class="transfers-form">
         <div id="popup" class="popup-form">
-            <h2>Solicitud de Transferencia</h2>
-            <hr>
+            <h2 class="transfers-titulo">Solicitud de Transferencia</h2>
             <div class="form-group">
                 <label for="date">Fecha de transferencia: 
                     <input type="date" name="date" id="date" class="form-control">
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="phone-number">Monto: 
+                    <input type="number" name="monto" id="monto" class="form-control">
                 </label>
             </div>
             <div class="form-group">

@@ -1,0 +1,266 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: whitesmoke;
+    display: block;
+    min-height: 100vh;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+main{
+    padding: 50px;
+}
+
+p{
+    font-size: 14px;
+}
+
+/* --------------- Encabezado --------------- */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    background-color: var(--color-principal);
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: black;
+}
+
+.nombre-banco{
+    margin: 5px 0;
+    font-size: 28px;
+}
+
+/* --------------- Pie de página --------------- */
+
+footer{
+    position: absolute;
+    display: flex;
+    background-color: var(--color-principal);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    /*Para incrementar el tamaño*/
+    padding: 3rem 8%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer ul li {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/*--------------- Formulario --------------- */
+
+.container{
+    margin:auto;
+    width: 100%;
+    text-align: center;
+    display: inline;
+    height: 100%;
+    /*Hace que cada elemento quede uno al lado del otro*/
+}
+
+.container form{
+    width: 100%;
+    height: 100%;
+    background: whitesmoke;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, .3);*/
+    text-align: center;
+}
+
+.container h1{
+    text-align: center;
+    margin-bottom: 24px;
+    color: #222;
+}
+
+.form-control{
+    width: 30%;
+    height: 50px;
+    padding: 0 20px;
+    border: none;
+	border-bottom: 2px solid silver;
+    background: none;
+    outline: none;
+}
+
+.form-control:active,
+.form-control:focus,
+.form-control:hover {
+	border-bottom-color: rgb(251, 137, 7);
+}
+
+.form-group{
+    padding: 10px;
+    display: flexbox;
+}
+
+.icon{
+    padding-left: 2px;
+    color: #656363;
+}
+
+.login-picture{
+    padding: 40px;
+}
+
+.login-picture img{
+    max-height: 50%;
+    width: 400px;
+}
+.register{
+    padding-bottom: 70px;
+}
+
+input::placeholder {
+    font-size: 15px;
+}
+
+.olvido{
+    padding: 20px;
+}
+
+.olvido a{
+    color: rgba(239, 88, 18, 0.995);
+    font-weight: 600;
+}
+
+/*--------------- Botón Formulario ---------------*/
+
+.button-class{
+    padding-top: 10px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.button {
+    background: rgb(251, 137, 7);
+    color: #ffffff;
+    width: 50%;
+    height: 50px;
+    border:none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2.5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.button button{
+    max-width: 100%;
+}
+
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
+.button a:hover{
+    color: rgb(251, 137, 7);
+    transition: .5s;
+}
+
+.button:hover{
+    background-color: #ffffff;
+    color: rgb(251, 137, 7);
+    border:1px solid rgb(251, 137, 7);
+}
+
+/*--------------- Validación de Inicio de sesión ---------------*/
+
+#user-error, #email-error, #password-error{
+    color: #C62828;
+    background: rgba(255, 0, 0, 0.1);
+    margin-top: 5px;
+    font-size: 15px;
+    /*width: 50%;*/
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #EF9A9A;
+    padding: 5px 8px;
+}
+
+.error{
+    margin: 0 auto;
+    width: 30%;
+    color: #C62828;
+    background: rgba(255, 0, 0, 0.1);
+    margin-top: 5px;
+    font-size: 15px;
+    /*width: 50%;*/
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #EF9A9A;
+    padding: 15px 8px;
+}
+
+/*--------------- Media query ---------------*/
+
+@media(max-width:700px){
+    body{
+        min-height: 80vh;
+    }
+    header{
+        background-color: whitesmoke;
+    }
+    footer{
+        display: none;
+    }
+
+    .container{
+        max-width: 100%;
+    }
+
+    .login-picture{
+        padding-top: 20px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .login-picture img{
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .form-control{
+        margin: 0;
+        width: 75%;
+        height: 50px;
+    }
+
+    .button{
+        width: 90%;
+    }
+
+    .error{
+        margin: 0 auto;
+        width: 70%;
+    }
+}

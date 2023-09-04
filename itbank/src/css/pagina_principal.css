@@ -1,0 +1,505 @@
+/* --------------- Encabezado --------------- */
+
+header{
+    /* position: fixed; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    width: 100%;
+    background-color: var(--color-principal);
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: black;
+}
+
+.nombre-banco{
+    margin: 5px 0;
+}
+
+
+/* --------------- Menu lateral --------------- */
+
+.sidebar {
+    width: 200px;
+    background-color:#f4f4f4;
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar .section-link{
+    text-decoration: none;
+    color: #dd5800;
+    font-weight: 600;
+    display: block;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.sidebar .section-link.active {
+    background-color: #fc843f;
+    color: #f1f1f1;
+}
+
+/* hover */
+.sidebar .section-link:hover:not(.active) {
+    background-color: #ffe2ce;
+}
+
+/*--------------- Botones ---------------*/
+
+.button-class{
+    padding-top: 10px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.button {
+    background: rgb(251, 137, 7);
+    color: #ffffff;
+    max-width: 100%;
+    height: 70px;
+    border:none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2.5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.button button{
+    max-width: 100%;
+}
+
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
+.button a:hover{
+    color: rgb(251, 137, 7);
+    transition: .5s;
+}
+
+.button:hover{
+    background-color: #ffffff;
+    color: rgb(251, 137, 7);
+    border:1px solid rgb(251, 137, 7);
+}
+
+
+/* --------------- Area principal --------------- */
+
+#main-section{
+    margin-left: 220px; /* Igual al ancho del sidebar */
+    padding: 20px;
+}
+
+#main-section-title {
+    text-align: center;
+    font-size: xx-large;
+    margin: 10px 0;
+}
+
+#main-section-content {
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Sección de inicio */
+.home-user-welcome{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.home-user-welcome-img{
+    display: inline-block; 
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    padding: 60px;
+    right: 0;
+    left: 0;
+    position: relative;
+}
+
+.home-user-welcome-img img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Sección de cuentas */
+.accounts-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-card {
+    width: 60%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.account-card .account-number {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.account-card .cbu,
+.account-card .alias {
+    color: #666;
+    margin-top: 5px;
+}
+
+.account-card .balance {
+    margin-top: 10px;
+}
+
+/* Sección de pagos de cuentas y servicios */
+.payments-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.payments-card {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.payments-card input {
+    width: 90%;
+    padding: 5px;
+}
+
+#payment-result {
+    padding: 15px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Sección de prestamos */
+.loan-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.loan-card {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.loan-card input {
+    width: 90%;
+    padding: 5px;
+}
+
+.loan-card .cotization{
+    padding: 5px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.loan-card .result {
+    font-weight: bold;
+}
+
+/* Sección de compra/venta de dolares */
+.converter-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.converter-card {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.converter-card label {
+    display: block;
+    font-weight: bold;
+}
+
+.converter-card input {
+    width: 90%;
+    padding: 5px;
+}
+
+.converter-card .cotization{
+    padding: 5px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.converter-card .result {
+    font-weight: bold;
+}
+
+/*--------------- Sección de transferencias--------------- */
+
+.transfers-titulo{
+    text-align: left;
+    padding-top: 40px;
+}
+
+.transfers-options{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.transfers-option{
+    width: 60%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.contacto{
+    padding: 40px;
+    width: 100%;
+}
+
+.contactos{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.button-contacto {
+    background: rgb(236, 232, 227);
+    color: #1e1c1c;
+    width: 200px;
+    height: 200px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.see-more{
+    background-color: rgb(91, 89, 89);
+    color: white;
+
+}
+
+.add{
+    border: solid black;
+    font-weight: 500;
+}
+
+/*Formulario*/
+
+.transfers-form{
+    max-width: 90%;
+    height: 90%;
+    background: whitesmoke;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, .3);*/
+}
+
+
+.cuerpo#blur.active{
+    filter: blur(220px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 2%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+
+}
+
+#popup::-webkit-scrollbar {
+    width: 5px;
+  }
+
+#popup::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+#popup::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  #popup::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+#popup.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.form-control{
+    width: 50%;
+    padding: 0 20px;
+    border: none;
+	border-bottom: 2px solid silver;
+    background: none;
+    outline: none;
+}
+
+.form-group label{
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group{
+    text-align: left;
+}
+
+.form-group input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.popup-form{
+    padding: 100px;
+}
+
+.transfers-titulo{
+    padding: 20px;
+    text-align: center;
+}
+
+/* --------------- Pie de página --------------- */
+
+footer{
+    position: absolute;
+    display: flex;
+    background-color: var(--color-principal);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    /*Para incrementar el tamaño*/
+    padding: 1.75rem 8%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer ul li {
+    text-decoration: none;
+    list-style: none;
+}
+
+/* -------------------------------------- */
+
+@media(max-width:1100px){
+    #popup{
+        width: 60%;
+    }
+}
+
+
+/* pantallas de menos de 700px */
+@media(max-width:700px){
+    .logo{
+        display: block;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-top: 0; /* Igual al alto que el header */
+    }
+    .sidebar a {
+        float: left;
+    }
+    #main-section{
+        margin-left: 0;
+    }
+    .account-card {
+        width: 90%;
+    }
+    footer{
+        padding: 1.25rem 2%;
+    }
+    #popup{
+        width: 90%;
+    }
+    .transfers-titulo{
+        text-align: center;
+    }
+}
+
+/* pantallas de menos de 400px */
+@media(max-width: 400px){
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+    #popup{
+        width: 70%;
+    }
+}

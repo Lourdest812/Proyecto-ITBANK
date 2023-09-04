@@ -7,7 +7,7 @@ header{
     justify-content: center;
     min-height: 70px;
     width: 100%;
-    background-color: var(--color-principal);
+    background-color: rgb(241, 117, 45);
     padding: 10px;
     flex-direction: column;
     text-align: center;
@@ -38,7 +38,7 @@ header{
 
 .sidebar {
     width: 200px;
-    background-color:#f4f4f4;
+    background-color:#f7f7f7;
     position: fixed;
     width: 220px;
     height: 100%;
@@ -62,47 +62,6 @@ header{
 /* hover */
 .sidebar .section-link:hover:not(.active) {
     background-color: #ffe2ce;
-}
-
-/*--------------- Botones ---------------*/
-
-.button-class{
-    padding-top: 10px;
-    padding-bottom: 40px;
-    text-align: center;
-}
-
-.button {
-    background: rgb(251, 137, 7);
-    color: #ffffff;
-    max-width: 100%;
-    height: 70px;
-    border:none;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 2.5px;
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.button button{
-    max-width: 100%;
-}
-
-.button a{
-    text-decoration: none;
-    color: white;
-}
-
-.button a:hover{
-    color: rgb(251, 137, 7);
-    transition: .5s;
-}
-
-.button:hover{
-    background-color: #ffffff;
-    color: rgb(251, 137, 7);
-    border:1px solid rgb(251, 137, 7);
 }
 
 
@@ -437,7 +396,7 @@ header{
 footer{
     position: absolute;
     display: flex;
-    background-color: var(--color-principal);
+    background-color:  rgb(241, 117, 45);
     width: 100%;
     bottom: 0;
     left: 0;

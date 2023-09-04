@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../Button";
+import Button from "../components/Button";
 import { FaUser, FaEnvelope, FaLock} from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 

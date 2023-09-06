@@ -76,14 +76,16 @@ footer ul li {
 }
 
 
+
 /*--------------- Formulario --------------- */
 
 .container{
     margin:auto;
     width: 100%;
     text-align: center;
-    display: inline;
-    height: 100%;
+    min-height: 100%;
+    padding: 70px;
+    
     /*Hace que cada elemento quede uno al lado del otro*/
 }
 
@@ -101,7 +103,7 @@ footer ul li {
     color: #222;
 }
 
-.form-control{
+.form-c{
     width: 30%;
     height: 50px;
     padding: 0 20px;
@@ -111,13 +113,13 @@ footer ul li {
     outline: none;
 }
 
-.form-control:active,
-.form-control:focus,
-.form-control:hover {
+.form-c:active,
+.form-c:focus,
+.form-c:hover {
 	border-bottom-color: rgb(251, 137, 7);
 }
 
-.form-group{
+.form-gr{
     padding: 10px;
     display: flexbox;
 }
@@ -249,7 +251,7 @@ input::placeholder {
         max-width: 90%;
     }
 
-    .form-control{
+    .form-c{
         margin: 0;
         width: 75%;
         height: 50px;

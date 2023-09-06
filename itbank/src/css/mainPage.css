@@ -249,6 +249,14 @@ header{
     padding-top: 40px;
 }
 
+.transfers-container{
+    margin:auto;
+    width: 100%;
+    text-align: center;
+    display: inline;
+    /*Hace que cada elemento quede uno al lado del otro*/
+}
+
 .transfers-options{
     align-items: center;
     display: grid;
@@ -317,6 +325,10 @@ header{
     user-select: none;
 }
 
+.cuerpo{
+    padding-left: 200px;
+}
+
 #popup{
     position: fixed;
     top: 40%;
@@ -358,7 +370,7 @@ header{
     transition: 0.5s;
 }
 
-.form-control{
+.transfers-form-control{
     width: 50%;
     padding: 0 20px;
     border: none;
@@ -367,15 +379,15 @@ header{
     outline: none;
 }
 
-.form-group label{
+.transfers-form-group label{
     font-family: 'Poppins', sans-serif;
 }
 
-.form-group{
+.transfers-form-group{
     text-align: left;
 }
 
-.form-group input{
+.transfers-form-group input{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -394,7 +406,7 @@ header{
 /* --------------- Pie de página --------------- */
 
 footer{
-    position: absolute;
+    position: fixed;
     display: flex;
     background-color:  rgb(241, 117, 45);
     width: 100%;

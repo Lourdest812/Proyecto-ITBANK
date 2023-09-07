@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#btn-accesibilidad, #btn_contraste{
+    display: none;
+    cursor: pointer;
+}
+.floting_menu{
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+}
+.menu i, .btn-accesibilidad label{
+    display: block;
+    text-decoration: none;
+    background: rgb(238, 101, 51);
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition: all 500ms ease;
+}
+.menu i:hover{
+    background: #fff;
+    color: #cc2b2b;
+}
+.menu i{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-accesibilidad:checked~ .menu i{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+.btn-accesibilidad label{
+    cursor: pointer;
+    background: #f44141;
+    font-size: 23px;
+}
+#btn-accesibilidad:checked ~ .btn-accesibilidad label{
+    transform: rotate(360deg);
+    font-size: 25px;
+}

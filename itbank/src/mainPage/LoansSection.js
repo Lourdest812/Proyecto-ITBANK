@@ -22,7 +22,7 @@ function LoansSection() {
 
   return (
     <main id="main-section">
-      <h2 id="main-section-title">PRESTAMOS</h2>
+      <h2 id="main-section-title">PRÉSTAMOS</h2>
       <div id="main-section-content">
         <div className="loan-container">
           <h3>Calculadora de Préstamos</h3>

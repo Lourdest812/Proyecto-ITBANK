@@ -84,7 +84,7 @@ footer ul li {
     width: 100%;
     text-align: center;
     min-height: 100%;
-    padding: 70px;
+    padding-top: 0px;
     
     /*Hace que cada elemento quede uno al lado del otro*/
 }
@@ -101,9 +101,10 @@ footer ul li {
     text-align: center;
     margin-bottom: 24px;
     color: #222;
+    padding-top: 30px;
 }
 
-.form-c{
+.login-form-control{
     width: 30%;
     height: 50px;
     padding: 0 20px;
@@ -113,13 +114,13 @@ footer ul li {
     outline: none;
 }
 
-.form-c:active,
-.form-c:focus,
-.form-c:hover {
+.login-form-control:active,
+.login-form-control:focus,
+.login-form-control:hover {
 	border-bottom-color: rgb(251, 137, 7);
 }
 
-.form-gr{
+.login-form-group{
     padding: 10px;
     display: flexbox;
 }
@@ -264,5 +265,12 @@ input::placeholder {
     .error{
         margin: 0 auto;
         width: 70%;
+    }
+
+    .container{
+        padding: 10px;
+    }
+    .login-form-control{
+        width: 90%;
     }
 }

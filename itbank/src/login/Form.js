@@ -77,42 +77,42 @@ function Form(){
         autoComplete="off"
         onSubmit={handleSubmit}
       >
-        <div className="form-gr">
+        <div className="login-form-group">
           <label htmlFor="user">
             <FaUser className="icon"/>
             <input
               type="text"
               name="user"
               id="user"
-              className="form-c"
+              className="login-form-control"
               placeholder="Usuario"
               onChange={(e) => setUser(e.target.value)}
             />
             {errors.user && <div className="error">{errors.user}</div>}
           </label>
         </div>
-        <div className="form-gr">
+        <div className="login-form-group">
           <label htmlFor="email">
             <FaEnvelope className="icon"/>
             <input
               type="email"
               name="email"
               id="email"
-              className="form-c"
+              className="login-form-control"
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
             {errors.email && <div className="error">{errors.email}</div>}
           </label>
         </div>
-        <div className="form-gr">
+        <div className="login-form-group">
           <label htmlFor="password">
             <FaLock className="icon"/>
             <input
               type="password"
               name="password"
               id="password"
-              className="form-c"
+              className="login-form-control"
               placeholder="Contraseña"
               onChange={(e) => setPassword(e.target.value)}
             />

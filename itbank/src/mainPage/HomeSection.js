@@ -7,10 +7,10 @@ function HomeSection(){
         <main id="main-section">
         <h2 id="main-section-title">INICIO</h2>
         <div id="main-section-content">
-            <p class="home-user-welcome">
+            <p className="home-user-welcome">
                 ¡Te damos la bienvenida!
             </p>
-            <div class="home-user-welcome-img">
+            <div className="home-user-welcome-img">
                 <img src={WelcomePicture} alt="welcome-picture"></img>
             </div>  
         </div>

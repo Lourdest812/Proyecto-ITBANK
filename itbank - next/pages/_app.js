@@ -1,10 +1,10 @@
-import './css/index.css';
-import Login from "./login/Login";
-import MainPage from "./mainPage/MainPage";
-import Register from "./login/Register";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import '../css/globals.css'
+import '../css/login.css'
+import '../css/mainPage.css'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import React, { useReducer, useEffect } from 'react';
-import { AppContext } from './AppContext'
+import { AppContext } from '../AppContext'
 
 
 const InitialState = {
@@ -20,10 +20,9 @@ const reducer = (state, action) => {
   }
 };
 
-function App() {
+function MyApp({ Component, pageProps }) {
 
   const [state, dispatch] = useReducer(reducer, InitialState);
-
 
   // Obtencion de cotización del dólar
   useEffect(() => {
@@ -39,19 +38,14 @@ function App() {
     ...state,
   }
 
-
   return (
-    <AppContext.Provider value={context}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Login/>} />
-          <Route path="/inicio" element={<MainPage/>} />
-          <Route path="/registro" element={<Register/>} />
-        </Routes>
-      </Router>
-    </AppContext.Provider>
-
-  );
+  <AppContext.Provider value={context}>
+    {/* Layout por default */}
+    <Header />
+    <Component {...pageProps} />
+    <Footer />
+  </AppContext.Provider>
+  )
 }
 
-export default App;
+export default MyApp

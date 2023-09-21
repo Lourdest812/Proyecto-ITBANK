@@ -39,7 +39,9 @@ function TransfersSection() {
                         <label htmlFor="phone-number">Teléfono:</label>
                         <input type="number" name="phone-number" id="phone-number" className="transfers-form-control" />
                     </div>
+                    <div className="button-class">
                     <button className="button" type="button" onClick={toggle}>Enviar</button>
+                    </div>
                   </div>
                 )}
             </form>

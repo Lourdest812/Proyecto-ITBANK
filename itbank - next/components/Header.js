@@ -1,20 +1,23 @@
 import Image from 'next/image'
+import Link from 'next/link';
+
 
 function Header(){
     return(
         <header>
             <div className="logo">
-                <a href="/home">
+                
+                <Link href="/main">
                     <Image 
                         src='/assets/img/bxs-bank.svg' 
                         alt="logo"
                         width={32}
                         height={32}
                     />
-                </a>
-                <a href="/home">
+                </Link>
+                <Link href="/main">
                     <h2 className="nombre-banco">ITBANK</h2>
-                </a>
+                </Link>
             </div>
         </header>
     );

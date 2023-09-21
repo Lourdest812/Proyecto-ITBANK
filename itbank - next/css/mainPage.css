@@ -37,7 +37,6 @@ header{
 /* --------------- Menu lateral --------------- */
 
 .sidebar {
-    width: 200px;
     background-color:#f7f7f7;
     position: fixed;
     width: 220px;
@@ -123,6 +122,13 @@ header{
     margin: 20px auto;
 }
 
+.account-card a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+
 .account-card .account-number {
     font-weight: bold;
     font-size: 18px;
@@ -138,7 +144,50 @@ header{
     margin-top: 10px;
 }
 
-/* Sección de pagos de cuentas y servicios */
+/* Sección de tarjetas */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-card {
+    width: 60%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.card-card a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.card-card .card-number {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.emition, .expiration {
+    font-size: 14px;
+    color: #777;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.owner, .company {
+    font-weight: bold;
+    font-size: 16px;
+    color: #444;
+    width: 100%;
+    margin-top: 8px;
+}
+
+
+/* Sección de pagos de pago de cuentas y servicios */
 .payments-container {
     display: flex;
     flex-direction: column;

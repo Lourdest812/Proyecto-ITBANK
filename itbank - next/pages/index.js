@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
         // Si el usuario está logeado, redirige a la página principal.
         return {
         redirect: {
-            destination: "/home",
+            destination: "/main",
             permanent: false,
         },
         };

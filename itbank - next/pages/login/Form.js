@@ -30,7 +30,7 @@ function Form() {
       if (Object.keys(errors).length === 0) {
         alert('Ingreso exitoso');
         console.log('Ingreso exitoso');
-        router.push('./home'); // Usamos router.push para la navegación en Next.js
+        router.push('./main'); // Usamos router.push para la navegación en Next.js
       }
     };
 

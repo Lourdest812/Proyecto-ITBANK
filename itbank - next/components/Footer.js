@@ -32,7 +32,10 @@ const Footer =()=>{
                         <a href="#"><p></p></a>
                         <a href="#"><p></p></a>
                     </div>
-                    
+                    <div className="footer-links-div">
+                        <h4>Contacto</h4>
+                        <a><p>Formulario de contacto</p></a>
+                    </div>
                 </div>
                 <div className="footer-links-div">
                         <h4>Redes sociales</h4>
@@ -42,7 +45,7 @@ const Footer =()=>{
                             <p><FaInstagram className="media-icon"/></p>
                             <p><FaLinkedin className="media-icon"/></p>
                         </div>
-                    </div>
+                </div>
                 <hr className="division"/>
                 <div className="footer-below">
                     <div className="footer-copyright">

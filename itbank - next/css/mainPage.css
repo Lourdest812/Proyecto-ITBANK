@@ -69,6 +69,9 @@ header{
 #main-section{
     margin-left: 220px; /* Igual al ancho del sidebar */
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
 }
 
 #main-section-title {
@@ -454,6 +457,8 @@ header{
     display: flex;
     flex-direction: column;
     padding-left: 200px;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer-links{

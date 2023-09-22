@@ -346,7 +346,7 @@ header{
 }
 
 .contacto{
-    padding: 40px;
+    padding: 20px;
     width: 100%;
 }
 
@@ -568,7 +568,7 @@ h1 {
     text-align: center;
   }
   /* Estilos para el formulario */
-  form {
+  .form-contacto {
     max-width: 400px;
     margin: 0 auto;
   }
@@ -607,7 +607,8 @@ h1 {
   .b-t-n_message::hover {
     background-color: #5cafe7;
   }
-  button[type="submit"] {
+
+  .b-t-n_message[type="submit"] {
     width: 100%;
     height: 50px;
     border: 1px solid;
@@ -618,7 +619,8 @@ h1 {
     cursor: pointer;
     outline: none;
   }
-  button[type="submit"]:hover {
+
+ .b-t-n_message[type="submit"]:hover {
     border-color: rgb(4, 5, 4);
     transition: 0.5s;
   }

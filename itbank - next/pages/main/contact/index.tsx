@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import Layout from "../Layout";
 
@@ -16,7 +15,7 @@ export default function ContactForm() {
       message: String(event.target.message.value),
     };
 
-    const response = await fetch("contact/contact.js", {
+    const response = await fetch("contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +41,7 @@ export default function ContactForm() {
     <main id="main-section">
        <h2 id="main-section-title">CONTACTO</h2>
           <div id="main-section-content">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-contacto">
       <div className="item-principal">
         <label className="item-labelsub" htmlFor="name">
           Nombre
@@ -84,7 +83,7 @@ export default function ContactForm() {
           className="item-limput"
         />
       </div>
-      <button type="submit" disabled={loading} className="b-t-n_message">
+      <button className="b-t-n_message" type="submit" disabled={loading}>
         Enviar
       </button>
     </form>

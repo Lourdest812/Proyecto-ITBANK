@@ -34,7 +34,7 @@ const Footer =()=>{
                     </div>
                     <div className="footer-links-div">
                         <h4>Contacto</h4>
-                        <a><p>Formulario de contacto</p></a>
+                        <a href="/main/contact"><p>Formulario de contacto</p></a>
                     </div>
                 </div>
                 <div className="footer-links-div">

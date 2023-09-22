@@ -17,7 +17,7 @@ function Card(){
     return(       
         <Layout sidebarActiveLink="cards-section-link">
             <main id="main-section">
-            <h2 id="main-section-title">CUENTA</h2>
+            <h2 id="main-section-title">TARJETA</h2>
             <div id="main-section-content">
                 <div className="cards-container">
                     {

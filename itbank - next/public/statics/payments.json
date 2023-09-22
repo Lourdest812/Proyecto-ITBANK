@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "company": "AYSA",
+        "expiration": "10/12/2023",
+        "amount": 5000
+    },
+    {
+        "id":2,
+        "company": "METROGAS",
+        "expiration": "12/12/2023",
+        "amount": 6500
+    },
+    {
+        "id":3,
+        "company": "MOVISTAR",
+        "expiration": "07/12/2023",
+        "amount": 7000
+    },
+    {
+        "id":4,
+        "company": "EDESUR",
+        "expiration": "05/12/2023",
+        "amount": 10000
+    }
+]

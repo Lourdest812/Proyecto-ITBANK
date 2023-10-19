@@ -4,7 +4,7 @@ class Tarjeta:
     
     def set_emisor(self, emisor):
         if emisor not in self.emisores:
-            raise Exception(ValueError)
+            raise ValueError
         else:
             self.emisor = emisor
         

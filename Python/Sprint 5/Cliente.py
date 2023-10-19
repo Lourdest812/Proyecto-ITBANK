@@ -4,18 +4,18 @@ from Cuenta import Cuenta, CajaAhorroDolares, CajaAhorroPesos, CajaAhorro, Cuent
 #Clase padre Cliente:
 class Cliente:
 
-    tarjetas = []
-    cuentas = []
-    cajas_ahorro_pesos = []
-    cajas_ahorro_dolares = []
-    cuentas_inversion = []
-    cuentas_corrientes = []
     cargo_mensual = 0
-    tarjetas_debito = []
-    tarjetas_credito = []
 
     def __init__(self):
-        pass
+        self.tarjetas = []
+        self.cuentas = []
+        self.cajas_ahorro_pesos = []
+        self.cajas_ahorro_dolares = []
+        self.cuentas_inversion = []
+        self.cuentas_corrientes = []
+        self.tarjetas_debito = []
+        self.tarjetas_credito = []
+
     
     def agregar_tarjeta(self, tarjeta):
         if isinstance(tarjeta, Tarjeta):
@@ -29,7 +29,6 @@ class Cliente:
 #Clase hija Cliente Classic
 class Classic(Cliente):
 
-    caja_ahorro_pesos = CajaAhorroPesos()
     retiros_max_sin_comision = 5    #Número máximo de retiros en efectivo sin comisiones
     limite_diario = 10000   #Retiro máximo por cajero sin tarifa
     comision_salientes = 0.01   #Porcentaje de comisión por transferencias salientes (1%)
@@ -37,7 +36,7 @@ class Classic(Cliente):
     
     def __init__(self):
         super().__init__()
-        self.cuentas.append(self.caja_ahorro_pesos)
+        self.cuentas.append(CajaAhorroPesos())
         
     def __str__(self):
         tarjetas_str = ", ".join(str(tarjeta) for tarjeta in self.tarjetas)
@@ -54,14 +53,17 @@ class Classic(Cliente):
     def agregar_cuenta(self, cuenta, cargo_mensual):
         if len(self.cuentas)<2 and isinstance(cuenta, CajaAhorroDolares):
             self.cargo_mensual = cargo_mensual
-            return super().agregar_cuenta(cuenta)
+            super().agregar_cuenta(cuenta)
  
  
 #Clase hija Cliente Gold
 class Gold(Cliente):
     
     cajas_ahorro = []
-        
+    comision_salientes = 0.005  #Porcentaje de comisión por transferencias salientes (0.5%)
+    comision_entrante = 0.001   #Porcentaje de comisión por transferencias entrantes (0.1%)
+    
+
     #Si el cliente Gold tiene más de 2 cajas de ahorro en dólares y más de 1 cuenta corriente se le es requerido un cargo mensual
     #No tiene cargos en caso contrario
     cargo_mensual = 0
@@ -89,14 +91,20 @@ class Gold(Cliente):
             self.cuentas_corrientes.append(cuenta)
         elif isinstance(cuenta, CuentaInversion):
             self.cuentas_inversion.append(cuenta)
-        elif len(self.cajas_ahorro)>2 or len(self.cuentas_corrientes)>1:
+        if isinstance(cuenta, Cuenta):
+            super().agregar_cuenta(cuenta)
+
+        if len(self.cajas_ahorro)>2 or len(self.cuentas_corrientes)>1:
             self.cargo_mensual = cargo_mensual
-        elif isinstance(cuenta, Cuenta):
-            return super().agregar_cuenta(cuenta)
+        
 
 
 #Clase hija cliente Black
 class Black(Cliente):
+
+    comision_salientes = 0
+    comision_entrante = 0
+    
     def __init__(self):
         super().__init__()
     
@@ -113,7 +121,7 @@ class Black(Cliente):
                 self.tarjetas_credito.append(tarjeta)
             return super().agregar_tarjeta(tarjeta)
         
-        
+
     def agregar_cuenta(self, cuenta, cargo_mensual):
         if isinstance(cuenta, CajaAhorroDolares):
             self.cajas_ahorro_dolares.append(cuenta)
@@ -121,9 +129,9 @@ class Black(Cliente):
             self.cuentas_corrientes.append(cuenta)
         elif isinstance(cuenta, CajaAhorroPesos):
             self.cajas_ahorro_pesos.append(cuenta)
-        elif len(self.cajas_ahorro_pesos)>5 or len(self.cajas_ahorro_dolares)>5 or len(self.cuentas_corrientes)>3:
-            self.cargo_mensual = cargo_mensual
         elif isinstance(cuenta, CuentaInversion):
             self.cuentas_inversion.append(cuenta)
-        elif isinstance(cuenta, Cuenta):
-            return super().agregar_cuenta(cuenta)
+        if len(self.cajas_ahorro_pesos)>5 or len(self.cajas_ahorro_dolares)>5 or len(self.cuentas_corrientes)>3:
+            self.cargo_mensual = cargo_mensual
+        if isinstance(cuenta, Cuenta):
+            super().agregar_cuenta(cuenta)

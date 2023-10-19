@@ -9,14 +9,22 @@ class Cliente:
     def __init__(self):
         self.tarjetas = []
         self.cuentas = []
-        self.cajas_ahorro_pesos = []
-        self.cajas_ahorro_dolares = []
-        self.cuentas_inversion = []
-        self.cuentas_corrientes = []
-        self.tarjetas_debito = []
-        self.tarjetas_credito = []
 
-    
+    def cantidad_tarjetas_debito(self):
+        return len([tarjeta for tarjeta in self.tarjetas if isinstance(tarjeta, TarjetaDebito)])
+
+    def cantidad_tarjetas_credito(self):
+        return len([tarjeta for tarjeta in self.tarjetas if isinstance(tarjeta, TarjetaCredito)])
+
+    def cantidad_cajas_ahorro(self):
+        return len([cuenta for cuenta in self.cuentas if isinstance(cuenta, CajaAhorroPesos) or isinstance(cuenta, CajaAhorroDolares)])
+
+    def cantidad_cuentas_inversion(self):
+        return len([cuenta for cuenta in self.cuentas if isinstance(cuenta, CuentaInversion)])
+
+    def cantidad_cuentas_corrientes(self):
+        return len([cuenta for cuenta in self.cuentas if isinstance(cuenta, CuentaCorrientePesos) or isinstance(cuenta, CuentaCorrienteDolares)])
+
     def agregar_tarjeta(self, tarjeta):
         if isinstance(tarjeta, Tarjeta):
             self.tarjetas.append(tarjeta)
@@ -45,7 +53,7 @@ class Classic(Cliente):
     
     def agregar_tarjeta(self, tarjeta):
         if len(self.tarjetas)<1 and isinstance(tarjeta, TarjetaDebito):
-            return super().agregar_tarjeta(tarjeta)
+            super().agregar_tarjeta(tarjeta)
     
     #Por defecto el Cliente Classic ya tiene una cuenta (una caja de ahorro en pesos)
     #Por eso para agregar otra cuenta (una caja de ahorro en dólares) la condición es que el tamaño de la lista 
@@ -59,7 +67,6 @@ class Classic(Cliente):
 #Clase hija Cliente Gold
 class Gold(Cliente):
     
-    cajas_ahorro = []
     comision_salientes = 0.005  #Porcentaje de comisión por transferencias salientes (0.5%)
     comision_entrante = 0.001   #Porcentaje de comisión por transferencias entrantes (0.1%)
     
@@ -77,24 +84,16 @@ class Gold(Cliente):
         return f'Cliente Gold\n{len(self.tarjetas)} {tarjetas_str}\n{len(self.cuentas)} Cuentas: {cuentas_str}\nCargo mensual:{self.cargo_mensual}'
         
     def agregar_tarjeta(self, tarjeta):
-        if isinstance(tarjeta, Tarjeta):
-            if len(self.tarjetas_debito)<1 and isinstance(tarjeta, TarjetaDebito):
-                self.tarjetas_debito.append(tarjeta)
-            elif len(self.tarjetas_credito)<5 and isinstance(tarjeta, TarjetaCredito):
-                self.tarjetas_credito.append(tarjeta)
-            return super().agregar_tarjeta(tarjeta)
-        
+        if self.cantidad_tarjetas_debito() <1 and isinstance(tarjeta, TarjetaDebito):
+            super().agregar_tarjeta(tarjeta)
+        elif self.cantidad_tarjetas_credito()<5 and isinstance(tarjeta, TarjetaCredito):
+            super().agregar_tarjeta(tarjeta)
+    
     def agregar_cuenta(self, cuenta, cargo_mensual):
-        if isinstance(cuenta, CajaAhorro):
-            self.cajas_ahorro.append(cuenta)
-        elif isinstance(cuenta, CuentaCorrientePesos) or isinstance(cuenta, CuentaCorrienteDolares):
-            self.cuentas_corrientes.append(cuenta)
-        elif isinstance(cuenta, CuentaInversion):
-            self.cuentas_inversion.append(cuenta)
-        if isinstance(cuenta, Cuenta):
+        if isinstance(cuenta, (CajaAhorro, CuentaCorrientePesos, CuentaCorrienteDolares, CuentaInversion)):
             super().agregar_cuenta(cuenta)
 
-        if len(self.cajas_ahorro)>2 or len(self.cuentas_corrientes)>1:
+        if self.cantidad_cajas_ahorro()>2 or self.cantidad_cuentas_corrientes()>1:
             self.cargo_mensual = cargo_mensual
         
 
@@ -115,23 +114,10 @@ class Black(Cliente):
     
     def agregar_tarjeta(self, tarjeta):
         if isinstance(tarjeta, Tarjeta):
-            if len(self.tarjetas_debito)<5 and isinstance(tarjeta, TarjetaDebito):
-                self.tarjetas_debito.append(tarjeta)
-            elif len(self.tarjetas_credito)<10 and isinstance(tarjeta, TarjetaCredito):
-                self.tarjetas_credito.append(tarjeta)
-            return super().agregar_tarjeta(tarjeta)
-        
+            if (self.cantidad_tarjetas_debito()<5 and isinstance(tarjeta, TarjetaDebito) or (self.cantidad_tarjetas_credito()<10 and isinstance(tarjeta, TarjetaCredito))):
+                super().agregar_tarjeta(tarjeta)
 
     def agregar_cuenta(self, cuenta, cargo_mensual):
-        if isinstance(cuenta, CajaAhorroDolares):
-            self.cajas_ahorro_dolares.append(cuenta)
-        elif isinstance(cuenta, CuentaCorrientePesos) or isinstance(cuenta, CuentaCorrienteDolares):
-            self.cuentas_corrientes.append(cuenta)
-        elif isinstance(cuenta, CajaAhorroPesos):
-            self.cajas_ahorro_pesos.append(cuenta)
-        elif isinstance(cuenta, CuentaInversion):
-            self.cuentas_inversion.append(cuenta)
-        if len(self.cajas_ahorro_pesos)>5 or len(self.cajas_ahorro_dolares)>5 or len(self.cuentas_corrientes)>3:
+        super().agregar_cuenta(cuenta)
+        if self.cantidad_cajas_ahorro()>5 or self.cantidad_cuentas_corrientes()>3:
             self.cargo_mensual = cargo_mensual
-        if isinstance(cuenta, Cuenta):
-            super().agregar_cuenta(cuenta)

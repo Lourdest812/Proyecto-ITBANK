@@ -123,5 +123,4 @@ BEGIN TRANSACTION;
 -- Insertar un nuevo movimiento en la tabla "movimientos"
 INSERT INTO movimientos (account_number, amount, operation_type, timestamp)
 VALUES (200, 1000, 'Transferencia', DATETIME('NOW'));
-
 COMMIT;

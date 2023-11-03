@@ -1,0 +1,15 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/login": "pages/login.js",
+  "/main/contact": "pages/main/contact.js",
+  "/main": "pages/main.js",
+  "/main/transfers": "pages/main/transfers.js",
+  "/main/cards": "pages/main/cards.js",
+  "/main/accounts": "pages/main/accounts.js",
+  "/main/payments": "pages/main/payments.js",
+  "/main/loans": "pages/main/loans.js",
+  "/main/dollars": "pages/main/dollars.js",
+  "/main/cards/[cardId]": "pages/main/cards/[cardId].js"
+}

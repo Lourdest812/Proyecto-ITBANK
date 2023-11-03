@@ -31,3 +31,96 @@ LEFT JOIN (
 ) l ON cl.customer_id = l.customer_id
 GROUP BY su.branch_name
 ORDER BY su.branch_name;
+
+-- La información de las cuentas resulta critica para la compañía, por eso es necesario crear una tabla denominada “auditoria_cuenta” 
+-- para guardar losdatos movimientos, con los siguientes campos: old_id, new_id, old_balance,new_balance, old_iban, new_iban, old_type,
+-- new_type, user_action,created_ato 
+
+CREATE TABLE auditoria_cuenta (
+    -- audit_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    old_id INT,
+    new_id INT,
+    old_balance DECIMAL,
+    new_balance DECIMAL,
+    old_iban VARCHAR(255),
+    new_iban VARCHAR(255),
+    old_type VARCHAR(50),
+    new_type VARCHAR(50),
+    user_action VARCHAR(255),
+    created_at TIMESTAMP
+);
+
+-- Crear un trigger que después de actualizar en la tabla cuentas los campos balance, IBAN o tipo de 
+-- cuenta registre en la tabla auditoria o Restar $100 a las cuentas 10,11,12,13,14
+
+CREATE TRIGGER data_update
+AFTER 
+UPDATE
+ON cuenta
+WHEN old.balance <> new.balance OR old.iban <> new.iban OR old.account_type <> new.account_type
+BEGIN
+	INSERT INTO auditoria_cuenta VALUES(
+	old.account_id,
+	new.account_id,
+	old.balance,
+	new.balance,
+	old.iban,
+	new.iban,
+	old.account_type,
+	new.account_type,
+	'UPDATE',
+	DATETIME('NOW')
+	);
+END;
+
+
+
+-- Restar $100 a las cuentas 10,11,12,13,14
+UPDATE cuenta
+SET balance = CASE
+	WHEN account_id BETWEEN 10 AND 14 THEN balance - 100
+	ELSE balance
+END;
+
+SELECT * FROM cuenta;
+
+SELECT * FROM auditoria_cuenta;
+
+
+
+-- Mediante índices mejorar la performance la búsqueda de clientes por DNI
+CREATE INDEX idx_clientes_DNI ON cliente (customer_DNI);
+SELECT * FROM cliente;
+SELECT customer_name, customer_surname
+FROM cliente
+WHERE customer_DNI = 20595714;
+
+
+
+-- Crear la tabla “movimientos” con los campos de identificación del movimiento, número de cuenta, monto, tipo de operación y hora
+CREATE TABLE movimientos (
+    movement_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    account_number INT,
+    amount DECIMAL,
+    operation_type VARCHAR(50),
+    timestamp TIMESTAMP
+);
+
+END;
+
+-- Mediante el uso de transacciones, hacer una transferencia de 1000$ desde la cuenta 200 a la cuenta 400
+BEGIN TRANSACTION;
+    UPDATE cuenta
+    SET balance = balance - 1000
+    WHERE account_id = 200;
+    
+    UPDATE cuenta
+    SET balance = balance + 1000
+    WHERE account_id = 400;
+    
+    -- En caso de no poder realizar la operación de forma completa, realizar un ROLLBACK
+
+-- Insertar un nuevo movimiento en la tabla "movimientos"
+INSERT INTO movimientos (account_number, amount, operation_type, timestamp)
+VALUES (200, 1000, 'Transferencia', DATETIME('NOW'));
+COMMIT;

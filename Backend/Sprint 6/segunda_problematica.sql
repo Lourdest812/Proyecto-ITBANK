@@ -1,4 +1,4 @@
--- Create a view with the columns id, branch number, name, last name, DNI, and age calculated from the date of birth
+-- Crear una vista con las columnas id, numero sucursal, nombre, apellido, DNIy edad de la tabla cliente calculada a partir de la fecha de nacimiento
 CREATE VIEW vista AS
 SELECT
   customer_id,
@@ -10,7 +10,7 @@ SELECT
   strftime('%Y', 'now') - strftime('%Y', dob) AS age
 FROM cliente;
 
--- Show the columns of clients, ordered by DNI from lowest to highest, and whose age is over 40
+-- Mostrar las columnas de los clientes, ordenadas por el DNI de menor a mayor y cuya edad sea superior a 40 años
 SELECT customer_id,
   branch_id,
   customer_name,
@@ -21,7 +21,7 @@ FROM vista
 WHERE age > 40
 ORDER BY customer_DNI ASC;
 
--- Show all clients named "Anne" or "Tyler" ordered by age from lowest to highest
+-- Mostrar todos los clientes que se llaman “Anne” o “Tyler” ordenados por edad de menor a mayor
 SELECT *
 FROM vista
 WHERE LOWER(customer_name) = 'anne' OR LOWER(customer_name) = 'tyler'

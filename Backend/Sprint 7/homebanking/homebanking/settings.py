@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    #'banco.apps.BancosConfig',
-    #'clientes.apps.ClientesConfig',
-    #'cuentas.apps.CuentasConfig',
-    #'login.apps.LoginConfig',
-    #'movimientos.apps.MovimientosConfig',
-    #'prestamos.apps.PrestamosConfig',
-    #'tarjetas.apps.TarjetasConfig',
+    'bancos.apps.BancosConfig',
+    'clientes.apps.ClientesConfig',
+    'cuentas.apps.CuentasConfig',
+    'login.apps.LoginConfig',
+    'movimientos.apps.MovimientosConfig',
+    'prestamos.apps.PrestamosConfig',
+    'tarjetas.apps.TarjetasConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

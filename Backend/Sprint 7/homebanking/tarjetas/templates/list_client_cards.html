@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Tarjetas</title>
+</head>
+<body>
+    <h2>Tarjetas del Cliente</h2>
+    <ul>
+        {% for tarjeta in tarjetas %}
+            <li>{{ tarjeta }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

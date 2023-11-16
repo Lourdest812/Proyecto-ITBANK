@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path("homebanking/", include("hb.urls")),
     path('admin/', admin.site.urls),
+    path('clients/', include('clientes.urls')),
+    path('accounts/', include('cuentas.urls')),
+    path('cards/', include('tarjetas.urls')),
 ]

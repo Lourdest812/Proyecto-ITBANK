@@ -1,10 +1,10 @@
 from django.db import models
 from clientes.models import Cliente
 
-class Prestamo:
+class Prestamo(models.Model):
     tipo = models.CharField(max_length=200)
     fecha = models.DateTimeField()
-    total = models.DecimalField()
+    total = models.DecimalField(max_digits=10, decimal_places=2)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     
     def __str__(self):

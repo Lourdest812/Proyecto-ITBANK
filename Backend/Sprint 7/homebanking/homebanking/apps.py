@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class HbConfig(AppConfig):
+class HomebankingConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'hb'
+    name = 'homebanking'

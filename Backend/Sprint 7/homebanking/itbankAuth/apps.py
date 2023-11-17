@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class TipoCuentaConfig(AppConfig):
+class ItbankAuthConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'tipo_cuenta'
+    name = 'itbankAuth'

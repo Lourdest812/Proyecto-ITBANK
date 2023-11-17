@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Tarjetas del Cliente</h2>
+    <ul>
+        {% for tarjeta in tarjetas %}
+            <li>{{ tarjeta }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

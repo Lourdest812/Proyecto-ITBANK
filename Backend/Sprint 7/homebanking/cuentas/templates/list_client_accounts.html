@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Detalles del cliente</h2>
+    <p>Cliente: {{cliente.nombre}} {{cliente.apellido}}</p>
+    <h3>Cuentas del Cliente</h3>
+    <ul>
+        {% for cuenta in cuentas %}
+            <li>{{ cuenta.tipo }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

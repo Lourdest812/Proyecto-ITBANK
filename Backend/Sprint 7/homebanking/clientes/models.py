@@ -1,8 +1,10 @@
 from django.db import models
 from bancos.models import Banco
+from django.contrib.auth.models import User
 
 
 class Cliente(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     dni = models.DecimalField(max_digits=8, decimal_places=0)
@@ -11,4 +13,4 @@ class Cliente(models.Model):
     tipo_cliente = models.CharField(max_length=10, default="CLASSIC", choices=(('BLACK', 'BLACK'), ('GOLD','GOLD'), ('CLASSIC', 'CLASSIC')))
 
     def __str__(self):
-        return f'{self.nombre} {self.apellido}'
+        return f'{self.nombre} {self.apellido} - DNI: {self.dni}'

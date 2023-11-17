@@ -31,10 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'homebanking.apps.HomebankingConfig',
     'bancos.apps.BancosConfig',
     'clientes.apps.ClientesConfig',
     'cuentas.apps.CuentasConfig',
-    'login.apps.LoginConfig',
+    'itbankAuth.apps.ItbankAuthConfig',
     'movimientos.apps.MovimientosConfig',
     'prestamos.apps.PrestamosConfig',
     'tarjetas.apps.TarjetasConfig',

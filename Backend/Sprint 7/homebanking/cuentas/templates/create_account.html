@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Crear Cuenta</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h2>Crear Cuenta</h2>
     <form method="post" action="{% url 'create_account' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
-</body>
-</html>
+{% endblock %}

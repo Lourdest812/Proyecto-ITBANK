@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Detalles de la cuenta</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h2>Detalles del cliente</h2>
     <p>Cliente: {{cliente.nombre}} {{cliente.apellido}}</p>
     <h3>Cuentas del Cliente</h3>
@@ -13,5 +9,4 @@
             <li>{{ cuenta.tipo }}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

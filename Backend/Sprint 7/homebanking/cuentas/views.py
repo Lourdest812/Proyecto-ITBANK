@@ -3,8 +3,10 @@ from django.http import JsonResponse
 from .forms import CuentaForm
 from .models import Cuenta, Cliente
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def create_account(request):
     if request.method == 'POST':
         form = CuentaForm(request.POST)
@@ -17,6 +19,7 @@ def create_account(request):
     return render(request, 'create_account.html', {'form': form})
 
 
+@login_required
 def account_detail(request, pk):
     account = get_object_or_404(Cuenta, pk=pk)
     context = {
@@ -25,6 +28,8 @@ def account_detail(request, pk):
     }
     return render(request, "account_detail.html", context)
 
+
+@login_required
 def list_client_accounts(request, cliente_id):
     cliente = get_object_or_404(Cliente, id=cliente_id)
     cuentas = Cuenta.objects.filter(cliente=cliente)

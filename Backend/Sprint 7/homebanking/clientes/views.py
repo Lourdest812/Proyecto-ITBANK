@@ -1,6 +1,9 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Cliente
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def client_detail(request, pk):
     cliente = get_object_or_404(Cliente, pk=pk)
     context = {

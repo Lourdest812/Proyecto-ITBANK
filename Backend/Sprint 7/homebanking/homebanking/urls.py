@@ -21,9 +21,10 @@ from .views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('cuentas.urls')),
     path('auth/', include('itbankAuth.urls')),
     path('clients/', include('clientes.urls')),
     path('bank_accounts/', include('cuentas.urls')),
     path('cards/', include('tarjetas.urls')),
+    path('prestamos/', include('prestamos.urls')),
 ]

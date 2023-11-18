@@ -10,4 +10,11 @@
         <li><strong>Banco:</strong> {{ banco }}</li>
         <li><strong>Tipo:</strong> {{ tipo_cliente }}</li>
 </ul>
+
+<a href="{% url 'list_client_accounts' cliente_id=cliente_id %}">
+    <button type="button">Ver cuentas</button>
+</a>
+<a href="{% url 'list_client_cards' cliente_id=cliente_id %}">
+    <button type="button">Ver tarjetas</button>
+</a>
 {% endblock %}

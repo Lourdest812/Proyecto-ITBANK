@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido al ITBank</title>
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenido al ITBank</h1>
+    </header>
+
+    <section>
+        <h2>¡Gracias por elegir ITBank!</h2>
+        <p>Estamos comprometidos a brindarle servicios financieros de alta calidad.</p>
+        <p>Explore nuestras opciones de cuentas y préstamos para satisfacer sus necesidades.</p>
+
+        <a href="{% url 'client_list' %}">
+            <button>Ir a lista de Clientes</button>
+        </a>
+        <a href="{% url 'create_account' %}">
+            <button>Crear cuenta</button>
+        </a>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2023 ITBank. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

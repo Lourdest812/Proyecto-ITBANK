@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <h2>Detalles del Cliente</h2>
+    <p>Cliente: {{cliente.nombre}} {{cliente.apellido}}</p>
     <h2>Tarjetas del Cliente</h2>
     <ul>
         {% for tarjeta in tarjetas %}

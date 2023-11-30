@@ -1,0 +1,18 @@
+[
+    {   
+        "id":1,
+        "company":"Visa",
+        "number":"1111 2222 3333 4444",
+        "owner":"Cosme Fulanito",
+        "emitionDate": "01/22",
+        "expirationDate": "11/27"
+    },
+    {   
+        "id":2,
+        "company":"Master Card",
+        "number":"2222 3333 4444 5555",
+        "owner":"Cosme Fulanito",
+        "emitionDate": "05/23",
+        "expirationDate": "10/26"
+    }
+]

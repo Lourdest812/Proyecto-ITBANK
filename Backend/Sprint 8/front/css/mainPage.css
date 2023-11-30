@@ -1,0 +1,701 @@
+/* --------------- Encabezado --------------- */
+
+header{
+    /* position: fixed; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    width: 100%;
+    background-color: rgb(241, 117, 45);
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    padding-left: 200px;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: black;
+}
+
+.nombre-banco{
+    margin: 5px 0;
+}
+
+
+/* --------------- Menu lateral --------------- */
+
+.sidebar {
+    background-color:#f7f7f7;
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar .section-link{
+    text-decoration: none;
+    color: #dd5800;
+    font-weight: 600;
+    display: block;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.sidebar .section-link.active {
+    background-color: #fc843f;
+    color: #f1f1f1;
+}
+
+/* hover */
+.sidebar .section-link:hover:not(.active) {
+    background-color: #ffe2ce;
+}
+
+
+/* --------------- Area principal --------------- */
+
+#main-section{
+    margin-left: 220px; /* Igual al ancho del sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+#main-section-title {
+    text-align: center;
+    font-size: xx-large;
+    margin: 10px 0;
+}
+
+#main-section-content {
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Sección de inicio */
+.home-user-welcome{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.home-user-welcome-img{
+    display: inline-block; 
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    padding: 60px;
+    right: 0;
+    left: 0;
+    position: relative;
+}
+
+.home-user-welcome-img img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Sección de cuentas */
+.accounts-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-card {
+    width: 60%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.account-card a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+
+.account-card .account-number {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.account-card .cbu,
+.account-card .alias {
+    color: #666;
+    margin-top: 5px;
+}
+
+.account-card .balance {
+    margin-top: 10px;
+}
+
+/* Sección de tarjetas */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-card {
+    width: 60%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.card-card a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.card-card .card-number {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.emition, .expiration {
+    font-size: 14px;
+    color: #777;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.owner, .company {
+    font-weight: bold;
+    font-size: 16px;
+    color: #444;
+    width: 100%;
+    margin-top: 8px;
+}
+
+
+/* Sección de pagos de pago de cuentas y servicios */
+.payments-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.payments-card {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.payments-card a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.payments-card .payment-company {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.payment-expiration, .payment-amount {
+    font-size: 16px;
+    color: #777;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.payments-card input {
+    width: 95%;
+    padding: 5px;
+}
+
+#payment-result {
+    padding: 15px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Sección de prestamos */
+.loan-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.loan-card {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.loan-card input {
+    width: 95%;
+    padding: 5px;
+}
+
+.loan-card .cotization{
+    padding: 5px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.loan-card .result {
+    font-weight: bold;
+}
+
+/* Sección de compra/venta de dolares */
+.converter-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.converter-card {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.converter-card label {
+    display: block;
+    font-weight: bold;
+}
+
+.converter-card input {
+    width: 90%;
+    padding: 5px;
+}
+
+.converter-card .cotization{
+    padding: 5px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.converter-card .result {
+    font-weight: bold;
+}
+
+/*--------------- Sección de transferencias--------------- */
+
+.transfers-titulo{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.transfers-container{
+    margin:auto;
+    width: 100%;
+    text-align: center;
+    display: inline;
+    /*Hace que cada elemento quede uno al lado del otro*/
+}
+
+.transfers-options{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    padding-bottom: 50px;
+}
+
+.transfers-option{
+    width: 60%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.contacto{
+    padding: 20px;
+    width: 100%;
+}
+
+.contactos{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.button-contacto {
+    background: rgb(236, 232, 227);
+    color: #1e1c1c;
+    width: 200px;
+    height: 200px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.see-more{
+    background-color: rgb(91, 89, 89);
+    color: white;
+
+}
+
+.add{
+    border: solid black;
+    font-weight: 500;
+}
+
+/*Formulario*/
+
+.transfers-form{
+    max-width: 90%;
+    height: 90%;
+    background: whitesmoke;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, .3);*/
+}
+
+#popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 2%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+
+}
+
+#popup::-webkit-scrollbar {
+    width: 5px;
+  }
+
+#popup::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+#popup::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  #popup::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+#popup.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.transfers-form-control{
+    width: 50%;
+    padding: 0 20px;
+    border: none;
+	border-bottom: 2px solid silver;
+    background: none;
+    outline: none;
+}
+
+.transfers-form-group label{
+    font-family: 'Poppins', sans-serif;
+}
+
+.transfers-form-group{
+    text-align: left;
+}
+
+.transfers-form-group input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.popup-form{
+    padding: 100px;
+}
+
+.transfers-titulo{
+    padding: 20px;
+    text-align: center;
+}
+
+/* --------------- Pie de página --------------- */
+
+.footer-section-padding{
+    padding: 4rem 4rem;
+}
+
+.footer{
+    background-color:#fc843f;
+    display: flex;
+    flex-direction: column;
+    padding-left: 200px;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.footer-links-div{
+    color: white;
+    padding-left: 20px;
+}
+
+.footer-links-div h4{
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.footer-links-div p{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0.5rem 0;
+    cursor: pointer;
+
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 15%;
+}
+
+.media-icon{
+    font-size: 20px;
+}
+
+.footer-below{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.footer-below-links{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-below-links p{
+    font-size: 13px;
+    line-height: 15px;
+    margin-left: 2rem;
+    color: white;
+    font-weight: 600;
+}
+
+.divison hr{
+    color: white;
+    width: 100%;
+}
+
+.footer-copyright p{
+    font-size: 13px;
+    line-height: 15px;
+    color: aliceblue;
+    font-weight: 600;
+}
+
+.footer a{
+    text-decoration: none;
+}
+
+/*--------------- Formulario de contacto ---------------*/
+
+h1 {
+    text-align: center;
+  }
+  /* Estilos para el formulario */
+  .form-contacto {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Estilos para los elementos principales del formulario */
+  .item-principal {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para las etiquetas */
+  .item-labelsub {
+    font-weight: bold;
+  }
+  
+  /* Estilos para los campos de entrada y el área de texto */
+  .item-limput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Estilos para el botón de envío */
+  .b-t-n_message {
+    background-color: #e48211;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .b-t-n_message::hover {
+    background-color: #5cafe7;
+  }
+
+  .b-t-n_message[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #ec7513;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+  }
+
+ .b-t-n_message[type="submit"]:hover {
+    border-color: rgb(4, 5, 4);
+    transition: 0.5s;
+  }
+
+@media screen and (max-width:700px) {
+    .footer-links div{
+        margin: 1rem 0;
+    }
+
+    .footer-below{
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .footer-below-links{
+        flex-direction: column;
+    }
+
+    .footer-below-links p{
+        margin-left: 0rem;
+        margin-top: 1rem;
+    }
+    
+    .footer{
+        padding-left: 0;
+    }
+}
+
+/* ------------------Media Queries-------------------- */
+
+@media(max-width:1100px){
+    #popup{
+        width: 60%;
+    }
+}
+
+
+/* pantallas de menos de 700px */
+@media(max-width:700px){
+    .logo{
+        display: block;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-top: 0; /* Igual al alto que el header */
+    }
+    .sidebar a {
+        float: left;
+    }
+    #main-section{
+        margin-left: 0;
+    }
+    .account-card {
+        width: 90%;
+    }
+    footer{
+        padding: 1.25rem 2%;
+    }
+    #popup{
+        width: 90%;
+    }
+    .transfers-titulo{
+        text-align: center;
+    }
+}
+
+/* pantallas de menos de 400px */
+@media(max-width: 400px){
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+    #popup{
+        width: 70%;
+    }
+}

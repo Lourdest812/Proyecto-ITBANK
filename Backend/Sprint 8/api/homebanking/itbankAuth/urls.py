@@ -1,7 +1,7 @@
 from rest_framework.routers import SimpleRouter
-from .views import PerfilUsuarioViewSet
+from .views import AuthViewSet
 
 router = SimpleRouter()
-router.register(r'profiles', PerfilUsuarioViewSet, basename='profiles')
+router.register(r'auth', AuthViewSet, basename='auth')
 
 urlpatterns = router.urls

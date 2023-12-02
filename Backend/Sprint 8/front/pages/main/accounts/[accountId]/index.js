@@ -38,7 +38,14 @@ function Account(){
 export default Account;
 
 function getAccount(accountId, setAccount) {
-    fetch(`http://localhost:8000/api/accounts/${accountId}`)
+    const userData = JSON.parse(sessionStorage.getItem('userData'))
+    const credentials = btoa(`${userData.username}:${userData.password}`)
+    fetch(`http://localhost:8000/api/accounts/${accountId}`,
+    {
+        headers: {
+            'Authorization': `Basic ${credentials}`
+        }
+    })
     .then(response => {
         return response.json()
     })

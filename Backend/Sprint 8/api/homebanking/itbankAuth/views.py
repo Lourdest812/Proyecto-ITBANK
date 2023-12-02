@@ -2,11 +2,15 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.decorators import action
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
+from rest_framework.permissions import AllowAny
 from .serializers import LoginSerializer
 
 
 class AuthViewSet(viewsets.ViewSet):
+
+    permission_classes = [AllowAny]
+
     @action(detail=False, methods=['post'])
     def login(self, request):
         serializer = LoginSerializer(data=request.data)
@@ -20,11 +24,8 @@ class AuthViewSet(viewsets.ViewSet):
         if user:
             cliente = user.cliente
 
-            # Iniciar sesión
-            login(request, user)
-
             # Establecer cookies
-            response = Response({'success': True, 'name':cliente.nombre, 'username':user.username, 'password':user.password, 'id':cliente.id})
+            response = Response({'success': True, 'name':cliente.nombre, 'username':user.username, 'password':password, 'id':cliente.id})
             response.set_cookie('cliente_id', str(cliente.id), httponly=True, max_age=3600)
             response.set_cookie('cliente_data', f'{cliente.nombre} {cliente.apellido}', max_age=3600)
 

@@ -2,13 +2,22 @@ import Layout from "../Layout";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+
 function AccountsSection(){
 
     const [accounts, setAccounts] = useState([])
     
     function getAccounts() {
         const userData = JSON.parse(sessionStorage.getItem('userData'))
-        fetch(`http://localhost:8000/api/accounts/?cliente=${userData.id}`)
+        const credentials = btoa(`${userData.username}:${userData.password}`)
+        fetch(
+            `http://localhost:8000/api/accounts/?cliente=${userData.id}`,
+            {
+                headers: {
+                    'Authorization': `Basic ${credentials}`
+                }
+            }
+        )
         .then(response => {
             return response.json()
         })

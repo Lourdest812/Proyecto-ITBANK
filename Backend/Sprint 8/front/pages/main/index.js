@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Layout from "./Layout";
 
 function HomeSection(){
-    const userData = JSON.parse(sessionStorage.getItem('userData'))
+    const userData = JSON.parse(sessionStorage.getItem('userData'));
     return(
         <Layout sidebarActiveLink="home-section-link">
             <main id="main-section">

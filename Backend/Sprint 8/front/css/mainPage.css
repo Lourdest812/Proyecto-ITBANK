@@ -197,7 +197,7 @@ header{
     flex-direction: column;
 }
 
-.payments-card {
+.banks-card {
     width: 90%;
     border: 1px solid #ccc;
     padding: 20px;
@@ -206,13 +206,13 @@ header{
     margin: 10px auto;
 }
 
-.payments-card a{
+.banks-card a{
     text-decoration: none;
     color: inherit;
     cursor: pointer;
 }
 
-.payments-card .payment-company {
+.banks-card .payment-company {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 8px;
@@ -230,7 +230,7 @@ header{
     margin-bottom: 15px;
 }
 
-.payments-card input {
+.banks-card input {
     width: 95%;
     padding: 5px;
 }

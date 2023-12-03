@@ -25,11 +25,6 @@ function Sidebar({ selectedSection }){
             path:"/main/transfers"
         },
         {
-            id: "payments-section-link",
-            text: "Pagos",
-            path:"/main/payments"
-        },
-        {
             id: "loans-section-link",
             text: "Prestamos",
             path:"/main/loans"
@@ -38,6 +33,11 @@ function Sidebar({ selectedSection }){
             id: "dollars-section-link",
             text: "Compra y venta de dolares",
             path:"/main/dollars"
+        },
+        {
+            id: "banks-section-link",
+            text: "Sucursales",
+            path:"/main/banks"
         },
     ]
 

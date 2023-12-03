@@ -2,13 +2,22 @@ import Layout from "../Layout";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+
 function AccountsSection(){
 
     const [accounts, setAccounts] = useState([])
     
     function getAccounts() {
         const userData = JSON.parse(sessionStorage.getItem('userData'))
-        fetch(`http://localhost:8000/api/accounts/?cliente=${userData.id}`)
+        const credentials = btoa(`${userData.username}:${userData.password}`)
+        fetch(
+            `http://localhost:8000/api/accounts/?cliente=${userData.id}`,
+            {
+                headers: {
+                    'Authorization': `Basic ${credentials}`
+                }
+            }
+        )
         .then(response => {
             return response.json()
         })
@@ -32,9 +41,9 @@ function AccountsSection(){
                             <div key={account.id} className="account-card">
                                 <Link href={`/main/accounts/${account.id}`}>
                                     <div className="account-number">Cliente: {account.cliente}</div>
-                                    <div className="cbu">Balance: {account.balance}</div>
+                                    <div className="cbu">Balance: ${account.balance}</div>
                                     <div className="alias">Iban: {account.iban}</div>
-                                    <div className="balance">Tipo: {account.tipo}</div>
+                                    <div className="balance"><b>Tipo:</b> {account.tipo}</div>
                                 </Link>
                             </div>
                         ))

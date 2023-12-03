@@ -41,7 +41,7 @@ function AccountsSection(){
                             <div key={account.id} className="account-card">
                                 <Link href={`/main/accounts/${account.id}`}>
                                     <div className="account-number">Cliente: {account.cliente}</div>
-                                    <div className="cbu">Balance: {account.balance}</div>
+                                    <div className="cbu">Balance: ${account.balance}</div>
                                     <div className="alias">Iban: {account.iban}</div>
                                     <div className="balance"><b>Tipo:</b> {account.tipo}</div>
                                 </Link>

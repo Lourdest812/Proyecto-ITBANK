@@ -43,7 +43,7 @@ function AccountsSection(){
                                     <div className="account-number">Cliente: {account.cliente}</div>
                                     <div className="cbu">Balance: {account.balance}</div>
                                     <div className="alias">Iban: {account.iban}</div>
-                                    <div className="balance">Tipo: {account.tipo}</div>
+                                    <div className="balance"><b>Tipo:</b> {account.tipo}</div>
                                 </Link>
                             </div>
                         ))

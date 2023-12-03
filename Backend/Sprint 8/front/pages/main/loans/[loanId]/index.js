@@ -3,29 +3,29 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 
 
-function Account(){
+function Loan(){
 
     const router = useRouter();
-    const accountId = parseInt(router.query.accountId);
+    const loanId = parseInt(router.query.loanId);
 
-    const [account, setAccount] = useState([])
+    const [loan, setLoan] = useState([])
     
     useEffect(() => {
-        getAccount(accountId, setAccount)
+        getLoan(loanId, setLoan)
     }, [])
 
     return(       
-        <Layout sidebarActiveLink="accounts-section-link">
+        <Layout sidebarActiveLink="loans-section-link">
             <main id="main-section">
-            <h2 id="main-section-title">CUENTA</h2>
+            <h2 id="main-section-title">PRÉSTAMO</h2>
             <div id="main-section-content">
-                <div className="accounts-container">
+                <div className="loan-container">
                     {
                         <div className="account-card">
-                            <div className="account-number">Cliente: {account.cliente}</div>
-                            <div className="cbu">Balance: ${account.balance}</div>
-                            <div className="alias">Iban: {account.iban}</div>
-                            <div className="balance"><b>Tipo:</b> {account.tipo}</div>
+                                <div className="account-number">Id de Cliente: {loan.cliente}</div>
+                                <div className="cbu">Tipo: {loan.tipo_prestamo}</div>
+                                <div className="alias">Fecha de inicio: {loan.fecha_inicio}</div>
+                                <div className="balance">Monto: {loan.monto_aprobado}</div>
                         </div>
                     }
                 </div>
@@ -35,21 +35,23 @@ function Account(){
     );
 }
 
-export default Account;
+export default Loan;
 
-function getAccount(accountId, setAccount) {
+function getLoan(loanId, setLoan) {
     const userData = JSON.parse(sessionStorage.getItem('userData'))
     const credentials = btoa(`${userData.username}:${userData.password}`)
-    fetch(`http://localhost:8000/api/accounts/${accountId}`,
+
+    fetch(`http://localhost:8000/api/loans/${loanId}`,
     {
         headers: {
             'Authorization': `Basic ${credentials}`
         }
-    })
+    }
+    )
     .then(response => {
         return response.json()
     })
     .then(data => {
-        setAccount(data)
+        setLoan(data)
     })
 }

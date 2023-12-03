@@ -22,10 +22,10 @@ function Card(){
                 <div className="cards-container">
                     {
                         <div className="card-card">
-                            <div className="card-number">{card.number}</div>
-                            <div className="emition">DESDE: {card.emitionDate}</div>
-                            <div className="expiration">HASTA: {card.expirationDate}</div>
-                            <div className="owner">{card.owner}</div>
+                            <div className="account-number">Id de Cliente: {card.cliente}</div>
+                            <div className="card-number">{card.numero_tarjeta}</div>
+                            <div className="emition">DESDE: {card.fecha_emision}</div>
+                            <div className="expiration">HASTA: {card.fecha_vencimiento}</div>
                             <div className="company">{card.company}</div>
                         </div>
                     }
@@ -39,14 +39,19 @@ function Card(){
 export default Card;
 
 function getCard(cardId, setCard) {
-    fetch("/statics/cards.json")
+    const userData = JSON.parse(sessionStorage.getItem('userData'))
+    const credentials = btoa(`${userData.username}:${userData.password}`)
+    fetch(`http://localhost:8000/api/cards/${cardId}`,
+    {
+        headers: {
+            'Authorization': `Basic ${credentials}`
+        }
+    }
+    )
     .then(response => {
         return response.json()
     })
     .then(data => {
-        console.log(data);
-
-        const card = data.find(card => card.id === cardId)
-        setCard(card)
+        setCard(data)
     })
 }

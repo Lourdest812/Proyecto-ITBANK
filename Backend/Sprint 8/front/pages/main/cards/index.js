@@ -7,7 +7,15 @@ function CardsSection(){
     const [cards, setCards] = useState([])
     
     function getCards() {
-        fetch("/statics/cards.json")
+        const userData = JSON.parse(sessionStorage.getItem('userData'))
+        const credentials = btoa(`${userData.username}:${userData.password}`)
+        fetch(`http://localhost:8000/api/cards/?cliente=${userData.id}`,
+        {
+            headers: {
+                'Authorization': `Basic ${credentials}`
+            }
+        }
+        )
         .then(response => {
             return response.json()
         })
@@ -30,11 +38,12 @@ function CardsSection(){
                         cards.map(card => (
                             <div key={card.id} className="card-card">
                                 <Link href={`/main/cards/${card.id}`}>
-                                    <div className="card-number">{card.number}</div>
-                                    <div className="emition">DESDE: {card.emitionDate}</div>
-                                    <div className="expiration">HASTA: {card.expirationDate}</div>
+                                    <div className="account-number">Cliente: {card.cliente}</div>
+                                    <div className="card-number">{card.numero_tarjeta}</div>
+                                    <div className="emition">DESDE: {card.fecha_emision}</div>
+                                    <div className="expiration">HASTA: {card.fecha_vencimiento}</div>
                                     <div className="owner">{card.owner}</div>
-                                    <div className="company">{card.company}</div>
+                                    <div className="company">{card.banco_emisor}</div>
                                 </Link>
                             </div>
                         ))
